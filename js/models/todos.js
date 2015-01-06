@@ -35,13 +35,7 @@ function withLatest(A$, B$, combineFunc) {
 		.switch();
 }
 
-var IntentInterface = ['insertTodo$', 'deleteTodo$', 'toggleTodo$',
-	'toggleAll$', 'clearInput$', 'deleteCompleteds$', 'startEditTodo$',
-	'editTodo$', 'doneEditing$', 'changeRoute$'
-];
-
-var TodosModel = Cycle.createModel(IntentInterface, ['todosData$'],
-	function (intent, initial) {
+var TodosModel = Cycle.createModel(function (intent, initial) {
 	var route$ = Rx.Observable.just('/').merge(intent.changeRoute$);
 
 	var insertTodoMod$ = intent.insertTodo$

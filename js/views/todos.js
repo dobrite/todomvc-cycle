@@ -114,13 +114,8 @@ function vrenderFooter(todosData) {
 	])
 }
 
-var TodosView = Cycle.createView(['todos$'], function (model) {
+var TodosView = Cycle.createView(function (model) {
 	return {
-		events: [
-			'newTodoKeyUp$', 'toggleAllClicks$', 'clearCompletedClicks$',
-			'todoToggleClicks$', 'todoDestroyClicks$', 'todoLabelDblClicks$',
-			'editTodoKeyUp$', 'editTodoBlur$'
-		],
 		vtree$: model.todos$
 			.map(function (todosData) {
 				return h('div', [

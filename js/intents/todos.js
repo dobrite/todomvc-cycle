@@ -24,12 +24,7 @@ function toEmptyString() {
 	return '';
 }
 
-var ViewInterface = ['newTodoKeyUp$', 'clearCompletedClicks$', 'editTodoKeyUp$',
-	'editTodoBlur$', 'toggleAllClicks$', 'todoToggleClicks$',
-	'todoLabelDblClicks$', 'todoDestroyClicks$'
-];
-
-var TodosIntent = Cycle.createIntent(ViewInterface, function (view) {
+var TodosIntent = Cycle.createIntent(function (view) {
 	return {
 		changeRoute$: Rx.Observable.fromEvent(window, 'hashchange')
 			.map(function (event) {
