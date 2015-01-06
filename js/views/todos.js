@@ -116,7 +116,7 @@ function vrenderFooter(todosData) {
 
 var TodosView = Cycle.createView(function (model) {
 	return {
-		vtree$: model.todos$
+		vtree$: model.get('todos$')
 			.map(function (todosData) {
 				return h('div', [
 					vrenderHeader(todosData),

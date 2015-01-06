@@ -36,9 +36,9 @@ function withLatest(A$, B$, combineFunc) {
 }
 
 var TodosModel = Cycle.createModel(function (intent, initial) {
-	var route$ = Rx.Observable.just('/').merge(intent.changeRoute$);
+	var route$ = Rx.Observable.just('/').merge(intent.get('changeRoute$'));
 
-	var insertTodoMod$ = intent.insertTodo$
+	var insertTodoMod$ = intent.get('insertTodo$')
 		.map(function (todoTitle) {
 			return function (todosData) {
 				todosData.list.push({
@@ -51,7 +51,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			};
 		});
 
-	var startEditTodoMod$ = intent.startEditTodo$
+	var startEditTodoMod$ = intent.get('startEditTodo$')
 		.map(function (todoIndex) {
 			return function (todosData) {
 				todosData.list.forEach(function (todoData, index) {
@@ -61,7 +61,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			}
 		});
 
-	var editTodoMod$ = intent.editTodo$
+	var editTodoMod$ = intent.get('editTodo$')
 		.map(function (modObject) {
 			return function (todosData) {
 				todosData.list[modObject.index].title = modObject.value;
@@ -69,7 +69,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			};
 		});
 
-	var stopEditingMod$ = withLatest(intent.doneEditing$, editTodoMod$,
+	var stopEditingMod$ = withLatest(intent.get('doneEditing$'), editTodoMod$,
 		function(d, editMod) {
 			return function (todosData) {
 				todosData.list.forEach(function (todoData) {
@@ -82,7 +82,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			};
 		});
 
-	var clearInputMod$ = intent.clearInput$
+	var clearInputMod$ = intent.get('clearInput$')
 		.map(function () {
 			return function (todosData) {
 				todosData.input = '';
@@ -90,7 +90,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			}
 		});
 
-	var toggleAllMod$ = intent.toggleAll$
+	var toggleAllMod$ = intent.get('toggleAll$')
 		.map(function () {
 			return function (todosData) {
 				var allAreCompleted = todosData.list.reduce(function (x, y) {
@@ -103,7 +103,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			}
 		});
 
-	var toggleTodoMod$ = intent.toggleTodo$
+	var toggleTodoMod$ = intent.get('toggleTodo$')
 		.map(function (todoIndex) {
 			return function (todosData) {
 				var previousCompleted = todosData.list[todoIndex].completed;
@@ -112,7 +112,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			}
 		});
 
-	var deleteTodoMod$ = intent.deleteTodo$
+	var deleteTodoMod$ = intent.get('deleteTodo$')
 		.map(function (todoIndex) {
 			return function (todosData) {
 				todosData.list.splice(todoIndex, 1);
@@ -120,7 +120,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 			}
 		});
 
-	var deleteCompletedsMod$ = intent.deleteCompleteds$
+	var deleteCompletedsMod$ = intent.get('deleteCompleteds$')
 		.map(function () {
 			return function (todosData) {
 				todosData.list = todosData.list.filter(function (todoData) {
@@ -138,7 +138,7 @@ var TodosModel = Cycle.createModel(function (intent, initial) {
 
 	return {
 		todos$: modifications$
-			.merge(initial.todosData$)
+			.merge(initial.get('todosData$'))
 			.scan(function (todosData, modification) {
 				return modification(todosData);
 			})
