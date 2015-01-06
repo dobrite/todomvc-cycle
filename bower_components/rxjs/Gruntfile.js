@@ -47,6 +47,11 @@ var browsers = [{
               'src/core/license.js',
               'src/core/intro.js',
               'src/core/basicheader-modern.js',
+
+              // Stack trace start
+              'src/core/longstackbegin.js',
+              'src/core/longstacktraces.js',
+
               'src/core/enumeratorheader.js',
 
               'src/core/deprecate.js',
@@ -212,8 +217,8 @@ var browsers = [{
               'src/core/backpressure/pausable.js',
               'src/core/backpressure/pausablebuffered.js',
               'src/core/backpressure/controlled.js',
-              'src/core/backpressure/controlledobservable.js',
-              'src/core/backpressure/controlledsubject.js',
+              'src/core/backpressure/stopandwait.js',
+              'src/core/backpressure/windowed.js',
 
               // Binding operators
               'src/core/linq/observable/multicast.js', // ConnectableObservable
@@ -273,7 +278,7 @@ var browsers = [{
               'src/core/linq/observable/windowwithtime.js', // AnonymousObservable, SerialDisposable, SingleAssignmentDisposable, RefCountDisposable, CompositeDisposable, addref, subject
               'src/core/linq/observable/windowwithtimeorcount.js', // AnonymousObservable, SerialDisposable, SingleAssignmentDisposable, RefCountDisposable, CompositeDisposable, addref, subject
               'src/core/linq/observable/bufferwithtime.js', // windowwithtime, selectMany, toArray
-              'src/core/linq/observable/bufferwithtimeourcount.js', // windowwithtimeorcount, selectMany, toArray
+              'src/core/linq/observable/bufferwithtimeorcount.js', // windowwithtimeorcount, selectMany, toArray
               'src/core/linq/observable/timeinterval.js', // timeoutScheduler, defer, select
               'src/core/linq/observable/timestamp.js', // timeoutScheduler, select
               'src/core/linq/observable/sample.js', // AnonymousObservable, CompositeDisposable, interval, timeoutScheduler
@@ -312,6 +317,10 @@ var browsers = [{
               'src/core/subjects/asyncsubject.js',
               'src/core/subjects/anonymoussubject.js',
               'src/core/exports.js',
+
+              // Long stacktrace end
+              'src/core/longstackend.js',
+
               'src/core/outro.js'
             ],
             dest: 'dist/rx.all.js'
@@ -321,6 +330,11 @@ var browsers = [{
               'src/core/license.js',
               'src/core/intro.js',
               'src/core/basicheader.js',
+
+              // Stack trace start
+              'src/core/longstackbegin.js',
+              'src/core/longstacktraces.js',
+
               'src/core/enumeratorheader.js',
 
               'src/core/deprecate.js',
@@ -547,7 +561,7 @@ var browsers = [{
               'src/core/linq/observable/windowwithtime.js', // AnonymousObservable, SerialDisposable, SingleAssignmentDisposable, RefCountDisposable, CompositeDisposable, addref, subject
               'src/core/linq/observable/windowwithtimeorcount.js', // AnonymousObservable, SerialDisposable, SingleAssignmentDisposable, RefCountDisposable, CompositeDisposable, addref, subject
               'src/core/linq/observable/bufferwithtime.js', // windowwithtime, selectMany, toArray
-              'src/core/linq/observable/bufferwithtimeourcount.js', // windowwithtimeorcount, selectMany, toArray
+              'src/core/linq/observable/bufferwithtimeorcount.js', // windowwithtimeorcount, selectMany, toArray
               'src/core/linq/observable/timeinterval.js', // timeoutScheduler, defer, select
               'src/core/linq/observable/timestamp.js', // timeoutScheduler, select
               'src/core/linq/observable/sample.js', // AnonymousObservable, CompositeDisposable, interval, timeoutScheduler
@@ -586,6 +600,10 @@ var browsers = [{
               'src/core/subjects/asyncsubject.js',
               'src/core/subjects/anonymoussubject.js',
               'src/core/exports.js',
+
+              // End long stack traces
+              'src/core/longstackend.js',
+
               'src/core/outro.js'
             ],
             dest: 'dist/rx.all.compat.js'
@@ -595,6 +613,11 @@ var browsers = [{
               'src/core/license.js',
               'src/core/intro.js',
               'src/core/basicheader.js',
+
+              // Stack trace start
+              'src/core/longstackbegin.js',
+              'src/core/longstacktraces.js',
+
               'src/core/enumeratorheader.js',
 
               'src/core/deprecate.js',
@@ -717,6 +740,9 @@ var browsers = [{
               'src/core/subjects/asyncsubject.js',
               'src/core/subjects/anonymoussubject.js',
               'src/core/exports.js',
+
+              'src/core/longstackend.js',
+
               'src/core/outro.js'
             ],
             dest: 'dist/rx.compat.js'
@@ -726,6 +752,11 @@ var browsers = [{
               'src/core/license.js',
               'src/core/intro.js',
               'src/core/basicheader-modern.js',
+
+              // Stack trace start
+              'src/core/longstackbegin.js',
+              'src/core/longstacktraces.js',
+
               'src/core/enumeratorheader.js',
 
               'src/core/deprecate.js',
@@ -848,6 +879,10 @@ var browsers = [{
               'src/core/subjects/asyncsubject.js',
               'src/core/subjects/anonymoussubject.js',
               'src/core/exports.js',
+
+              // Long stack trace end
+              'src/core/longstackend.js',
+
               'src/core/outro.js'
             ],
             dest: 'dist/rx.js'
@@ -857,6 +892,11 @@ var browsers = [{
               'src/core/license.js',
               'src/core/intro.js',
               'src/core/liteheader.js',
+
+              // Stack trace start
+              'src/core/longstackbegin.js',
+              'src/core/longstacktraces.js',
+
               'src/core/enumeratorheader.js',
 
               'src/core/deprecate.js',
@@ -983,10 +1023,8 @@ var browsers = [{
               'src/core/backpressure/pausable.js',
               'src/core/backpressure/pausablebuffered.js',
               'src/core/backpressure/controlled.js',
-              'src/core/backpressure/controlledobservable.js',
-              'src/core/backpressure/controlledsubject.js',
+              //'src/core/backpressure/stopandwait.js',
               //'src/core/backpressure/windowed.js',
-              //'src/core/backpressure/windowedobservable.js',
 
               // Transducers
               'src/core/linq/observable/transduce.js',
@@ -1001,6 +1039,10 @@ var browsers = [{
               'src/core/subjects/replaysubject.js',
 
               'src/core/exports.js',
+
+              // End long stack traces
+              'src/core/longstackend.js',
+
               'src/core/outro.js'
             ],
             dest: 'dist/rx.lite.js'
@@ -1010,6 +1052,11 @@ var browsers = [{
               'src/core/license.js',
               'src/core/intro.js',
               'src/core/liteheader-compat.js',
+
+              // Stack trace start
+              'src/core/longstackbegin.js',
+              'src/core/longstacktraces.js',
+
               'src/core/enumeratorheader.js',
 
               'src/core/deprecate.js',
@@ -1137,8 +1184,8 @@ var browsers = [{
               'src/core/backpressure/pausable.js',
               'src/core/backpressure/pausablebuffered.js',
               'src/core/backpressure/controlled.js',
-              'src/core/backpressure/controlledobservable.js',
-              'src/core/backpressure/controlledsubject.js',
+              //'src/core/backpressure/stopandwait.js',
+              //'src/core/backpressure/windowed.js',
 
               // Transducers
               'src/core/linq/observable/transduce.js',
@@ -1153,6 +1200,10 @@ var browsers = [{
               'src/core/subjects/replaysubject.js',
 
               'src/core/exports.js',
+
+              // End long stack traces
+              'src/core/longstackend.js',
+
               'src/core/outro.js'
             ],
             dest: 'dist/rx.lite.compat.js'
@@ -1205,10 +1256,8 @@ var browsers = [{
               'src/core/backpressure/pausable.js',
               'src/core/backpressure/pausablebuffered.js',
               'src/core/backpressure/controlled.js',
-              'src/core/backpressure/controlledobservable.js',
-              'src/core/backpressure/controlledsubject.js',
-              //'src/core/backpressure/windowed.js',
-              //'src/core/backpressure/windowedobservable.js',
+              'src/core/backpressure/stopandwait.js',
+              'src/core/backpressure/windowed.js',
 
               'src/core/suboutro.js'
             ],
@@ -1409,7 +1458,7 @@ var browsers = [{
               'src/core/linq/observable/windowwithtime.js', // AnonymousObservable, SerialDisposable, SingleAssignmentDisposable, RefCountDisposable, CompositeDisposable, addref, subject
               'src/core/linq/observable/windowwithtimeorcount.js', // AnonymousObservable, SerialDisposable, SingleAssignmentDisposable, RefCountDisposable, CompositeDisposable, addref, subject
               'src/core/linq/observable/bufferwithtime.js', // windowwithtime, selectMany, toArray
-              'src/core/linq/observable/bufferwithtimeourcount.js', // windowwithtimeorcount, selectMany, toArray
+              'src/core/linq/observable/bufferwithtimeorcount.js', // windowwithtimeorcount, selectMany, toArray
               'src/core/linq/observable/timeinterval.js', // timeoutScheduler, defer, select
               'src/core/linq/observable/timestamp.js', // timeoutScheduler, select
               'src/core/linq/observable/sample.js', // AnonymousObservable, CompositeDisposable, interval, timeoutScheduler
@@ -1784,6 +1833,70 @@ var browsers = [{
   }
 
   grunt.registerTask('test', testjobs);
+
+  grunt.registerTask('concat-min', [
+    'concat:all',
+    'concat:allcompat',
+    'concat:basic',
+    'concat:modern',
+    'concat:backpressure',
+    'concat:aggregates',
+    'concat:asyncCompat',
+    'concat:asyncModern',
+    'concat:binding',
+    'concat:coincidence',
+    'concat:experimental',
+    'concat:joinpatterns',
+    'concat:time',
+    'concat:testing',
+    'concat:virtualtime',
+    'concat:lite',
+    'concat:litecompat',
+    'concat:liteextras',
+    'concat:sorting',
+
+    'uglify:all',
+    'uglify:allcompat',
+    'uglify:basic',
+    'uglify:modern',
+    'uglify:backpressure',
+    'uglify:aggregates',
+    'uglify:asyncCompat',
+    'uglify:asyncModern',
+    'uglify:binding',
+    'uglify:coincidence',
+    'uglify:experimental',
+    'uglify:joinpatterns',
+    'uglify:testing',
+    'uglify:time',
+    'uglify:virtualtime',
+    'uglify:lite',
+    'uglify:litecompat',
+    'uglify:liteextras',
+    'uglify:sorting'
+  ]);
+
+  grunt.registerTask('concatall', [
+    'concat:all',
+    'concat:allcompat',
+    'concat:basic',
+    'concat:modern',
+    'concat:backpressure',
+    'concat:aggregates',
+    'concat:asyncCompat',
+    'concat:asyncModern',
+    'concat:binding',
+    'concat:coincidence',
+    'concat:experimental',
+    'concat:joinpatterns',
+    'concat:time',
+    'concat:testing',
+    'concat:virtualtime',
+    'concat:lite',
+    'concat:litecompat',
+    'concat:liteextras',
+    'concat:sorting'
+  ]);
 
   // Default task
   grunt.registerTask('default', [
