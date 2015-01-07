@@ -14,16 +14,15 @@ function merge() {
 	return result;
 }
 
-var InitialTodosModel = Cycle.createModel(function () {
-	var defaultTodosData = {
-		list: [],
-		input: '',
-		filter: '',
-		filterFn: function () { return true; } // allow anything
-	};
-	var storedTodosData = JSON.parse(localStorage.getItem('todos-cycle')) || {};
-	var initialTodosData = merge(defaultTodosData, storedTodosData);
-	return {
-		todosData$: Rx.Observable.just(initialTodosData)
-	};
+var defaultTodosData = {
+	list: [],
+	input: '',
+	filter: '',
+	filterFn: function () { return true; } // allow anything
+};
+
+var storedTodosData = JSON.parse(localStorage.getItem('todos-cycle')) || {};
+var initialTodosData = merge(defaultTodosData, storedTodosData);
+var InitialTodosModel = Cycle.createDataFlowSource({
+	todosData$: Rx.Observable.just(initialTodosData)
 });
